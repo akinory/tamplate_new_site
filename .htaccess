@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# This is the base directory of the site.
+RewriteBase /tamplate_new_site/
+
+RewriteRule ^index\.php$ - [L]
+
+# No rewriting will be done here if the file exists
+
+RewriteCond  %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#All pages will rewrite to this url
+RewriteRule . /tamplate_new_site/index.php [L]
+
+</IfModule>
